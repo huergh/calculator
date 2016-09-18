@@ -1,62 +1,63 @@
 package calculator.gui;
 
-import java.math.BigDecimal;
-
 import javafx.fxml.FXML;
+import model.AppendableNumber;
 
 public class CalculatorController {
+	
+	private AppendableNumber displayContent = new AppendableNumber();
 
 	@FXML
 	protected void buttonZeroPressed() {
-		numberButtonPressed(0);
+		inputButtonPressed("0");
 	}
 	
 	@FXML
 	protected void buttonOnePressed() {
-		numberButtonPressed(1);
+		inputButtonPressed("1");
 	}
 	
 	@FXML
 	protected void buttonTwoPressed() {
-		numberButtonPressed(2);
+		inputButtonPressed("2");
 	}
 	
 	@FXML
 	protected void buttonThreePressed() {
-		numberButtonPressed(3);
+		inputButtonPressed("3");
 	}
 	
 	@FXML
 	protected void buttonFourPressed() {
-		numberButtonPressed(4);
+		inputButtonPressed("4");
 	}
 	
 	@FXML
 	protected void buttonFivePressed() {
-		numberButtonPressed(5);
+		inputButtonPressed("5");
 	}
 	
 	@FXML
 	protected void buttonSixPressed() {
-		numberButtonPressed(6);
+		inputButtonPressed("6");
 	}
 	
 	@FXML
 	protected void buttonSevenPressed() {
-		numberButtonPressed(7);
+		inputButtonPressed("7");
 	}
 	
 	@FXML
 	protected void buttonEightPressed() {
-		numberButtonPressed(8);
+		inputButtonPressed("8");
 	}
 	
 	@FXML
 	protected void buttonNinePressed() {
-		numberButtonPressed(9);
+		inputButtonPressed("9");
 	}
 
-	private void numberButtonPressed(int number) {
-		
+	private void inputButtonPressed(String input) {
+		displayContent.append(input);
 	}
 }
