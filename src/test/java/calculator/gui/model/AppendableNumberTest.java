@@ -24,5 +24,37 @@ public class AppendableNumberTest {
 		
 		assertEquals("should be 4100", 4100L, number.getAsNumber().longValue());
 	}
-
+	
+	@Test
+	public void appendWithPoint() {
+		AppendableNumber number = new AppendableNumber();
+		number.append("4");
+		number.append(".");
+		number.append("6");
+		
+		assertEquals("should be approx. 4.6", 4.6, number.getAsNumber().doubleValue(), 0.0000001);
+	}
+	
+	
+	@Test
+	public void shouldntAcceptTwoPoints() {
+		AppendableNumber number = new AppendableNumber();
+		number.append("4");
+		number.append(".");
+		number.append("6");
+		number.append(".");
+		number.append("1");
+		
+		assertEquals("should be approx. 4.61", 4.61, number.getAsNumber().doubleValue(), 0.0000001);
+	}
+	
+	@Test
+	public void shouldntAcceptComma() {
+		AppendableNumber number = new AppendableNumber();
+		number.append("4");
+		number.append(",");
+		number.append("6");
+		
+		assertEquals("should be 46", 46L, number.getAsNumber().longValue());
+	}
 }
