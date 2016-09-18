@@ -1,7 +1,7 @@
 package calculator.gui;
 
+import calculator.gui.model.AppendableNumber;
 import javafx.fxml.FXML;
-import model.AppendableNumber;
 
 public class CalculatorController {
 	
