@@ -9,10 +9,13 @@ public class AppendableNumberTest {
 	@Test
 	public void appendSingleDigitMultipleTimes() {
 		AppendableNumber number = new AppendableNumber();
-		number.append("4");
-		number.append("5");
-		number.append("3");
+		boolean canAppend4 = number.append("4");
+		boolean canAppend5 = number.append("5");
+		boolean canAppend3 = number.append("3");
 		
+		assertTrue("Should be able to append 4", canAppend4);
+		assertTrue("Should be able to append 5", canAppend5);
+		assertTrue("Should be able to append 3", canAppend3);
 		assertEquals("should be 453", 453L, number.getAsNumber().longValue());
 	}
 	
@@ -52,9 +55,10 @@ public class AppendableNumberTest {
 	public void shouldntAcceptComma() {
 		AppendableNumber number = new AppendableNumber();
 		number.append("4");
-		number.append(",");
+		boolean canAppend = number.append(",");
 		number.append("6");
 		
+		assertFalse("should not be able to append comma", canAppend);
 		assertEquals("should be 46", 46L, number.getAsNumber().longValue());
 	}
 }
