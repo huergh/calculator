@@ -8,7 +8,7 @@
 <GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center"
 	hgap="10" vgap="10" fx:controller="calculator.gui.CalculatorController">
 
-	<TextField fx:id="textNumber" GridPane.columnIndex="0"
+	<TextField fx:id="textNumber" editable="false" GridPane.columnIndex="0"
 		GridPane.rowIndex="0" GridPane.columnSpan="4"/>
 
 	<Button text="7" prefHeight="50" prefWidth="50" onAction="#buttonSevenPressed"
