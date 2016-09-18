@@ -60,6 +60,11 @@ public class CalculatorController {
 	protected void buttonNinePressed() {
 		inputButtonPressed("9");
 	}
+	
+	@FXML
+	protected void buttonPointPressed() {
+		inputButtonPressed(".");
+	}
 
 	private void inputButtonPressed(String input) {
 		displayContent.append(input);

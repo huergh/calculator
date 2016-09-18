@@ -40,7 +40,7 @@
 
 	<Button text="0" prefHeight="50" prefWidth="50" onAction="#buttonZeroPressed"
 		GridPane.columnIndex="0" GridPane.rowIndex="4" />
-	<Button text="." prefHeight="50" prefWidth="50"
+	<Button text="." prefHeight="50" prefWidth="50" onAction="#buttonPointPressed"
 		GridPane.columnIndex="1" GridPane.rowIndex="4" />
 	<Button text="=" prefHeight="50" prefWidth="50"
 		GridPane.columnIndex="2" GridPane.rowIndex="4" />
