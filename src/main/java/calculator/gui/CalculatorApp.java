@@ -1,6 +1,9 @@
 package calculator.gui;
 
 import javafx.application.*;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class CalculatorApp extends Application {
@@ -10,9 +13,12 @@ public class CalculatorApp extends Application {
 	}
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
-		primaryStage.setTitle("Hello World");
-		primaryStage.show();		
+	public void start(Stage stage) throws Exception {
+		Parent root = FXMLLoader.load(getClass().getResource("calculator.fxml"));
+		Scene scene = new Scene(root, 600, 400);
+		stage.setTitle("Calculator");
+		stage.setScene(scene);
+		stage.show();		
 	}
 
 }
