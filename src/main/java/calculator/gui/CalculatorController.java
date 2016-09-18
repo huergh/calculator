@@ -2,10 +2,14 @@ package calculator.gui;
 
 import calculator.gui.model.AppendableNumber;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
 public class CalculatorController {
 	
 	private AppendableNumber displayContent = new AppendableNumber();
+	
+	@FXML
+	TextField textDisplay;
 
 	@FXML
 	protected void buttonZeroPressed() {
@@ -59,5 +63,6 @@ public class CalculatorController {
 
 	private void inputButtonPressed(String input) {
 		displayContent.append(input);
+		textDisplay.setText(displayContent.getAsText());
 	}
 }
