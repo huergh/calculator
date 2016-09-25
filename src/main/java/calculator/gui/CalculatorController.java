@@ -1,5 +1,10 @@
 package calculator.gui;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import calculator.backend.MathematicalObject;
+import calculator.backend.Numbers;
 import calculator.gui.model.AppendableNumber;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -7,6 +12,8 @@ import javafx.scene.control.TextField;
 public class CalculatorController {
 	
 	private AppendableNumber displayContent = new AppendableNumber();
+	
+	private List<MathematicalObject> mathematicalObjects = new ArrayList<>();
 	
 	@FXML
 	TextField textDisplay;
@@ -65,9 +72,34 @@ public class CalculatorController {
 	protected void buttonPointPressed() {
 		inputButtonPressed(".");
 	}
+	
+	@FXML
+	protected void buttonPlusPressed() {
+		saveAndClearDisplayContent();
+	}
+	
+	@FXML
+	protected void buttonMinusPressed() {
+		saveAndClearDisplayContent();
+	}
+	
+	@FXML
+	protected void buttonStarPressed() {
+		saveAndClearDisplayContent();
+	}
+	
+	@FXML
+	protected void buttonSlashPressed() {
+		saveAndClearDisplayContent();
+	}
 
 	private void inputButtonPressed(String input) {
 		displayContent.append(input);
 		textDisplay.setText(displayContent.getAsText());
+	}
+	
+	private void saveAndClearDisplayContent() {
+		mathematicalObjects.add(new Numbers(displayContent.getAsNumber()));
+		displayContent.clear();
 	}
 }

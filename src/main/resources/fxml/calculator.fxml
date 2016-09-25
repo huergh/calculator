@@ -17,7 +17,7 @@
 		GridPane.columnIndex="1" GridPane.rowIndex="1" />
 	<Button text="9" prefHeight="50" prefWidth="50" onAction="#buttonNinePressed"
 		GridPane.columnIndex="2" GridPane.rowIndex="1" />
-	<Button text="/" prefHeight="50" prefWidth="50"
+	<Button text="/" prefHeight="50" prefWidth="50" onAction="#buttonSlashPressed"
 		GridPane.columnIndex="3" GridPane.rowIndex="1" />
 
 	<Button text="4" prefHeight="50" prefWidth="50" onAction="#buttonFourPressed"
@@ -26,7 +26,7 @@
 		GridPane.columnIndex="1" GridPane.rowIndex="2" />
 	<Button text="6" prefHeight="50" prefWidth="50" onAction="#buttonSixPressed"
 		GridPane.columnIndex="2" GridPane.rowIndex="2" />
-	<Button text="*" prefHeight="50" prefWidth="50"
+	<Button text="*" prefHeight="50" prefWidth="50" onAction="#buttonStarPressed"
 		GridPane.columnIndex="3" GridPane.rowIndex="2" />
 
 	<Button text="1" prefHeight="50" prefWidth="50" onAction="#buttonOnePressed"
@@ -35,7 +35,7 @@
 		GridPane.columnIndex="1" GridPane.rowIndex="3" />
 	<Button text="3" prefHeight="50" prefWidth="50" onAction="#buttonThreePressed"
 		GridPane.columnIndex="2" GridPane.rowIndex="3" />
-	<Button text="-" prefHeight="50" prefWidth="50"
+	<Button text="-" prefHeight="50" prefWidth="50" onAction="#buttonMinusPressed"
 		GridPane.columnIndex="3" GridPane.rowIndex="3" />
 
 	<Button text="0" prefHeight="50" prefWidth="50" onAction="#buttonZeroPressed"
@@ -44,7 +44,7 @@
 		GridPane.columnIndex="1" GridPane.rowIndex="4" />
 	<Button text="=" prefHeight="50" prefWidth="50"
 		GridPane.columnIndex="2" GridPane.rowIndex="4" />
-	<Button text="+" prefHeight="50" prefWidth="50"
+	<Button text="+" prefHeight="50" prefWidth="50" onAction="#buttonPlusPressed"
 		GridPane.columnIndex="3" GridPane.rowIndex="4" />
 
 </GridPane>

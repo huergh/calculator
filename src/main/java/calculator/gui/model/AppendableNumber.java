@@ -25,4 +25,9 @@ public class AppendableNumber {
 			return false;
 		}
 	}
+	
+	public void clear() {
+		text = "";
+		number = new BigDecimal(0);
+	}
 }
