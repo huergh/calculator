@@ -29,6 +29,12 @@ public class AppendableNumber {
 			return false;
 		}		
 	}
+
+	public void setNumber(BigDecimal number) {
+		this.number = number;
+		this.text = number.toString();
+		updateAll();
+	}
 	
 	public void clear() {
 		text = "";

@@ -1,13 +1,13 @@
 package calculator.backend;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.math.BigDecimal;
 
 public class Calculator {
-	private ArrayList<MathematicalObject> inPut;
+	private List<MathematicalObject> inPut;
 	// private ArrayList<MathematicalObject> inPut1;
 
-	public Calculator(ArrayList<MathematicalObject> inPut) {
+	public Calculator(List<MathematicalObject> inPut) {
 		this.inPut = inPut;
 		// this.inPut1 = null;
 	}

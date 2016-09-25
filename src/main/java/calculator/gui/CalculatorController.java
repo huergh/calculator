@@ -1,10 +1,14 @@
 package calculator.gui;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import calculator.backend.Calculator;
+import calculator.backend.MathOp;
 import calculator.backend.MathematicalObject;
 import calculator.backend.Numbers;
+import calculator.backend.Operator;
 import calculator.gui.model.AppendableNumber;
 import calculator.gui.model.AppendableNumberObserver;
 import javafx.fxml.FXML;
@@ -81,21 +85,32 @@ public class CalculatorController implements AppendableNumberObserver {
 	@FXML
 	protected void buttonPlusPressed() {
 		saveAndClearDisplayContent();
+		mathematicalObjects.add(new Operator(MathOp.PLUS));
 	}
 	
 	@FXML
 	protected void buttonMinusPressed() {
 		saveAndClearDisplayContent();
+		mathematicalObjects.add(new Operator(MathOp.MINUS));
 	}
 	
 	@FXML
 	protected void buttonStarPressed() {
 		saveAndClearDisplayContent();
+		mathematicalObjects.add(new Operator(MathOp.STAR));
 	}
 	
 	@FXML
 	protected void buttonSlashPressed() {
 		saveAndClearDisplayContent();
+		mathematicalObjects.add(new Operator(MathOp.SLASH));
+	}
+	
+	@FXML
+	protected void buttonEqualsPressed() {
+		saveAndClearDisplayContent();
+		BigDecimal result = new Calculator(mathematicalObjects).evaluate();
+		displayContent.setNumber(result);
 	}
 	
 	@Override
