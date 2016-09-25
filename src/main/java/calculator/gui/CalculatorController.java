@@ -6,14 +6,19 @@ import java.util.List;
 import calculator.backend.MathematicalObject;
 import calculator.backend.Numbers;
 import calculator.gui.model.AppendableNumber;
+import calculator.gui.model.AppendableNumberObserver;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class CalculatorController {
+public class CalculatorController implements AppendableNumberObserver {
 	
 	private AppendableNumber displayContent = new AppendableNumber();
 	
 	private List<MathematicalObject> mathematicalObjects = new ArrayList<>();
+	
+	public CalculatorController() {
+		displayContent.register(this);
+	}
 	
 	@FXML
 	TextField textDisplay;
@@ -92,10 +97,14 @@ public class CalculatorController {
 	protected void buttonSlashPressed() {
 		saveAndClearDisplayContent();
 	}
+	
+	@Override
+	public void update(AppendableNumber number) {
+		textDisplay.setText(displayContent.getAsText());
+	}
 
 	private void inputButtonPressed(String input) {
-		displayContent.append(input);
-		textDisplay.setText(displayContent.getAsText());
+		displayContent.append(input);		
 	}
 	
 	private void saveAndClearDisplayContent() {
